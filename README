@@ -6,6 +6,7 @@
    ##  #### ##       ##     ##            ##    ##  ##  ## ##       ##     ##
    ##   ### ##    ##  ##   ##       ##    ##    ##  ##  ## ##       ##     ##
    ##    ##  ######    #####         ######      ###  ###  ######## ########
+
           ########  #######   #######  ##       ##    ## #### ########
              ##    ##     ## ##     ## ##       ##   ##   ##     ##
              ##    ##     ## ##     ## ##       ##  ##    ##     ##
@@ -15,19 +16,34 @@
              ##     #######   #######  ######## ##    ## ####    ##
 
 
-			       nc0's Web Toolkit:
-		      A set of tools to create responsive
-			      hypertext documents.
+      nc0's Web Toolkit (often abbreviated as nWT) is a tool box for
+   developers and designers to create and iterate on hypertext documents
+   quickly, without compromising on responsivness and elegance.
+   Composed of libraries and guides for HTML, CSS, JavaScript, and more,
+   nWT is perfectly suited for prototyping as well as production usage in
+   all modern browsers (and sometimes even Internet Explorer).
+
+   Each library and guide is self-contained in its own file, feel free to
+   explore them for documentation and more:
+
+   (1) Fluid Layout (fl.css) is a functional CSS library providing a
+       flexible, responsive, and intuitive layout system for CSS.
 
 
-      nc0's Web Toolkit (nWT) is a toolbox for developers, designers, and
-   others to quickly create and iterate on hypertext documents in a responsive
-   and elegant manner.
+   Documentation and distribution of nWT is also available on-line at
+   https://nc0.fr/web.
 
-   Composed of libraries for JavaScript, snippets of CSS, templates for HTML,
-   and guides, nWT is perfectly suited for prototyping as well as production
-   usage, supporting all modern browsers.
+   You may clone this repository using Git:
 
-   On-line document is available on the World Wide Web at https://nc0.fr/web.
+       git clone https://git.puffer.fish/nico/web.git
+
+   (a mirror of which is also available on GitHub at
+   https://github.com/ncs-pl/web.git, but it might not be in sync).
+
+   Discussions, development, and announcements related to nWT are active
+   on the <nwt@puffer.fish> mailing list.
+
+   The nWT project is distributed for free and without any warranty.
+   Study the COPYRIGHT file for the entire distribution terms.
 
 			     Copyright (c) nc0 2024
