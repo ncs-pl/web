@@ -8,6 +8,7 @@
  - ##  #### ##       ##     ##            ##    ##  ##  ## ##       ##     ## -
  - ##   ### ##    ##  ##   ##       ##    ##    ##  ##  ## ##       ##     ## -
  - ##    ##  ######    #####         ######      ###  ###  ######## ########  -
+ -                                                                            -
  -        ########  #######   #######  ##       ##    ## #### ########        -
  -           ##    ##     ## ##     ## ##       ##   ##   ##     ##           -
  -           ##    ##     ## ##     ## ##       ##  ##    ##     ##           -
@@ -19,34 +20,25 @@
  - This document is part of nc0's Web Toolkit.  Read more about it on-line at -
  - https://nc0.fr/web on the World Wide Web.                                  -
  ------------------------------------------------------------------------------
- - Copyright (c) Nicolas Paul <n@nc0.fr> 2024.  All rights reserved.          -
+ - Copyright (c) Nicolas Paul <n@nc0.fr> 2024                                 -
  -                                                                            -
- - Permission to use, copy, modify, and distribute this software for any      -
- - purpose with or without fee is hereby granted, provided that the above     -
- - copyright notice and this permission notice appear in all copies.          -
- -                                                                            -
- - THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES   -
- - WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF           -
- - MERCHANTABILITY AND FITNESS.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   -
- - ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES     -
- - WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN      -
- - ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF    -
- - OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.             -
+ - You can do whatever you want with this software as long as you retain      -
+ - this notice without alteration.                                            -
  ------------------------------------------------------------------------------>
 
 <html lang="en">
 <meta charset="utf-8">
-<title>nco's Web Toolkit</title>
+<title>nc0's Web Toolkit</title>
 
 <meta name="viewport"     content="width=device-width, initial-scale=1">
 <meta name="title"        content="nc0's Web Toolkit">
 <meta name="description"  content="Tools to create hypertext documents.">
 <meta name="author"       content="nc0">
 <meta name="keywords"     content="web,toolkit,guides,tool,library,css,html,js">
-<meta name="theme-color"  content="#ffffff">     <!-- TODO(nc0) -->
-<meta name="color-scheme" content="light dark">  <!-- TODO(nc0) -->
+<meta name="theme-color"  content="#1b1b1b">
+<meta name="color-scheme" content="only dark">
 
-<link rel="canonical" src="https://nc0.fr/web">
+<link href="https://nc0.fr/web" rel="canonical">
 
 <!-- https://ogp.me -->
 <meta property="og:title"       content="nc0's Web Toolkit">
@@ -55,7 +47,7 @@
 <meta property="og:description" content="Tools to create hypertext documents">
 <meta property="og:determiner"  content="">
 <meta property="og:locale"      content="en_US">
-<meta property="og:site_name"   content="nc0.fr">
+<meta property="og:site_name"   content="nc0.fr/web">
 
 <!-- https://developer.x.com/en/docs/x-for-websites/ -->
 <meta name="twitter:card"        content="summary">
@@ -63,9 +55,64 @@
 <meta name="twitter:title"       content="nc0's Web Toolkit">
 <meta name="twitter:description" content="Tools to create hypertext documents">
 
+<!-- nWT stuff -->
+<link href="fl.css" rel="stylesheet" type="text/css">
+
 <style>
+html {
+	margin:    auto;
+	max-width: 33em;
+}
+
+a       { color: #310566; }
+a:hover { color: #FBB9E1; background-color: #310566; }
+
+/* COLORS *********************************************************************
+ * Purple: #310566    Black: #000000                                          *
+ * Pink:   #FBB9E1    White: #FFFFFF                                          *
+ ******************************************************************************/
+
+.bg-black  { background-color: #000000; }
+.bg-white  { background-color: #FFFFFF; }
+.bg-purple { background-color: #310566; }
+.bg-pink   { background-color: #FBB9E1; }
+
+.txt-black  { color: #000000; }
+.txt-white  { color: #FFFFFF; }
+.txt-purple { color: #310566; }
+.txt-pink   { color: #FBB9E1; }
+
+.borderblack  { border-color: #000000; }
+.borderwhite  { border-color: #FFFFFF; }
+.borderpurple { border-color: #310566; }
+.borderpink   { border-color: #FBB9E1; }
 </style>
 
-<!-- TODO(nc0): body of the page -->
+<body class="fl-vertical fl-top bg-pink txt-purple">
+<header class="fl-horizontal fl-auto">
+	<span>NC0'S</span>
+	<span>WEB</span>
+	<span>TOOLKIT</span>
+</header>
 
+<main class="fl-vertical fl-top">
+	<h1 id="nwt" class="bg-purple txt-pink">nc0's Web Toolkit</h1>
+	<p>nc0's Web Toolkit (nWT) is a toolbox for developers, designers, and
+	   others to quickly prototype and iterate on hypertext documents on
+	   the World Wide Web, in a responsive, interactive, and elegant manner.
+
+	<article>
+	<h2 id="fluid-layout" class="bg-purple txt-pink">Fluid Layout</h2>
+	<p>A functional CSS library providing an elegant and responsive layout
+	   system (fluid layouts) that automatically adapts its layout given
+	   the available space and the size occupied by its inner content or
+	   children.
+	<p><a href="fl.css">Download</a> (ISC License).
+	</article>
+</main>
+
+<footer>
+	<p>Copyright (c) nc0 2024.
+</footer>
+</body>
 </html>
