@@ -141,6 +141,7 @@
 .fl-vertical   > *           /* Make sure fluid layouts children occupy the
                                 entire space available to them. */
 {
+	flex-basis:        100%;
 	flex-shrink:       1;
 	flex-grow:         0;
 	-ms-flex-positive: 0; /* IE10 */
