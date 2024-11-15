@@ -59,11 +59,313 @@
 <meta name="twitter:title"       content="nc0's Web Toolkit">
 <meta name="twitter:description" content="Tools to create hypertext documents">
 
-<!-- nWT stuff -->
-<link href="fl.css" rel="stylesheet" type="text/css">
-
 <style>
-/* TODO(nc0): complete website */
+:root {
+	--nwt-space: 0.25rem;
+}
+
+/* FLUID LAYOUTS **************************************************************
+ * Extracted from https://nc0.fr/web/fl.css.                                  *
+ *                                                                            *
+ * Copyright (c) Nicolas Paul <n@nc0.fr> 2024                                 *
+ *                                                                            *
+ * You can do whatever you want with this software as long as you retain      *
+ * this notice without alteration.                                            *
+ ******************************************************************************/
+
+.fl-horizontal {
+	display:         inline-flex;
+	display:         inline-flexbox; /* 2012 syntax */
+	flex-direction:  row; /* main-axis > ; cross-axis v */
+	flex-wrap:       wrap;
+	align-items:     center;
+	justify-content: flex-start;
+}
+
+.fl-vertical {
+	display:         inline-flex;
+	display:         inline-flexbox; /* 2012 syntax */
+	flex-direction:  column; /* main-axis v ; cross-axis > */
+	flex-wrap:       nowrap;
+	align-items:     flex-start;
+	justify-content: center;
+}
+
+.fl-horizontal > *,
+.fl-vertical   > * {
+	flex-basis:        100%;
+	flex-shrink:       1;
+	flex-grow:         0;
+	-ms-flex-positive: 0; /* IE10 */
+	align-self:        stretch;
+}
+
+.fl-nowrap { flex-wrap: nowrap; }
+
+.fl-horizontal .fl-left   { justify-content: flex-start; }
+.fl-horizontal .fl-center { justify-content: center;     }
+.fl-horizontal .fl-right  { justify-content: flex-end;   }
+
+.fl-vertical .fl-top    { justify-content: flex-start; }
+.fl-vertical .fl-middle { justify-content: center;     }
+.fl-vertical .fl-bottom { justify-content: flex-end;   }
+
+.fl-horizontal .fl-auto,
+.fl-vertical   .fl-auto  { justify-content: space-between; }
+
+/* SPACING ********************************************************************
+ * Extracted from https://nc0.fr/web/space.css.                               *
+ *                                                                            *
+ * Copyright (c) Nicolas Paul <n@nc0.fr> 2024                                 *
+ *                                                                            *
+ * You can do whatever you want with this software as long as you retain      *
+ * this notice without alteration.                                            *
+ ******************************************************************************/
+
+.m-0   { margin: 0px;                           }
+.m-1   { margin: var(--nwt-space, 0.25rem);     }
+.m-2   { margin: 2*var(--nwt-space, 0.25rem);   }
+.m-3   { margin: 3*var(--nwt-space, 0.25rem);   }
+.m-4   { margin: 4*var(--nwt-space, 0.25rem);   }
+.m-5   { margin: 5*var(--nwt-space, 0.25rem);   }
+.m-6   { margin: 6*var(--nwt-space, 0.25rem);   }
+.m-7   { margin: 7*var(--nwt-space, 0.25rem);   }
+.m-8   { margin: 8*var(--nwt-space, 0.25rem);   }
+.m-9   { margin: 9*var(--nwt-space, 0.25rem);   }
+.m-10  { margin: 10*var(--nwt-space, 0.25rem);  }
+.m-11  { margin: 11*var(--nwt-space, 0.25rem);  }
+.m-12  { margin: 12*var(--nwt-space, 0.25rem);  }
+.m-13  { margin: 13*var(--nwt-space, 0.25rem);  }
+.m-14  { margin: 14*var(--nwt-space, 0.25rem);  }
+.m-15  { margin: 15*var(--nwt-space, 0.25rem);  }
+.m-16  { margin: 16*var(--nwt-space, 0.25rem);  }
+.m-17  { margin: 17*var(--nwt-space, 0.25rem);  }
+.m-18  { margin: 18*var(--nwt-space, 0.25rem);  }
+.m-19  { margin: 19*var(--nwt-space, 0.25rem);  }
+.m-20  { margin: 20*var(--nwt-space, 0.25rem);  }
+
+.mt-0   { margin-top: 0px;                           }
+.mt-1   { margin-top: var(--nwt-space, 0.25rem);     }
+.mt-2   { margin-top: 2*var(--nwt-space, 0.25rem);   }
+.mt-3   { margin-top: 3*var(--nwt-space, 0.25rem);   }
+.mt-4   { margin-top: 4*var(--nwt-space, 0.25rem);   }
+.mt-5   { margin-top: 5*var(--nwt-space, 0.25rem);   }
+.mt-6   { margin-top: 6*var(--nwt-space, 0.25rem);   }
+.mt-7   { margin-top: 7*var(--nwt-space, 0.25rem);   }
+.mt-8   { margin-top: 8*var(--nwt-space, 0.25rem);   }
+.mt-9   { margin-top: 9*var(--nwt-space, 0.25rem);   }
+.mt-10  { margin-top: 10*var(--nwt-space, 0.25rem);  }
+.mt-11  { margin-top: 11*var(--nwt-space, 0.25rem);  }
+.mt-12  { margin-top: 12*var(--nwt-space, 0.25rem);  }
+.mt-13  { margin-top: 13*var(--nwt-space, 0.25rem);  }
+.mt-14  { margin-top: 14*var(--nwt-space, 0.25rem);  }
+.mt-15  { margin-top: 15*var(--nwt-space, 0.25rem);  }
+.mt-16  { margin-top: 16*var(--nwt-space, 0.25rem);  }
+.mt-17  { margin-top: 17*var(--nwt-space, 0.25rem);  }
+.mt-18  { margin-top: 18*var(--nwt-space, 0.25rem);  }
+.mt-19  { margin-top: 19*var(--nwt-space, 0.25rem);  }
+.mt-20  { margin-top: 20*var(--nwt-space, 0.25rem);  }
+
+.mr-0   { margin-right: 0px;                           }
+.mr-1   { margin-right: var(--nwt-space, 0.25rem);     }
+.mr-2   { margin-right: 2*var(--nwt-space, 0.25rem);   }
+.mr-3   { margin-right: 3*var(--nwt-space, 0.25rem);   }
+.mr-4   { margin-right: 4*var(--nwt-space, 0.25rem);   }
+.mr-5   { margin-right: 5*var(--nwt-space, 0.25rem);   }
+.mr-6   { margin-right: 6*var(--nwt-space, 0.25rem);   }
+.mr-7   { margin-right: 7*var(--nwt-space, 0.25rem);   }
+.mr-8   { margin-right: 8*var(--nwt-space, 0.25rem);   }
+.mr-9   { margin-right: 9*var(--nwt-space, 0.25rem);   }
+.mr-10  { margin-right: 10*var(--nwt-space, 0.25rem);  }
+.mr-11  { margin-right: 11*var(--nwt-space, 0.25rem);  }
+.mr-12  { margin-right: 12*var(--nwt-space, 0.25rem);  }
+.mr-13  { margin-right: 13*var(--nwt-space, 0.25rem);  }
+.mr-14  { margin-right: 14*var(--nwt-space, 0.25rem);  }
+.mr-15  { margin-right: 15*var(--nwt-space, 0.25rem);  }
+.mr-16  { margin-right: 16*var(--nwt-space, 0.25rem);  }
+.mr-17  { margin-right: 17*var(--nwt-space, 0.25rem);  }
+.mr-18  { margin-right: 18*var(--nwt-space, 0.25rem);  }
+.mr-19  { margin-right: 19*var(--nwt-space, 0.25rem);  }
+.mr-20  { margin-right: 20*var(--nwt-space, 0.25rem);  }
+
+.mb-0   { margin-bottom: 0px;                           }
+.mb-1   { margin-bottom: var(--nwt-space, 0.25rem);     }
+.mb-2   { margin-bottom: 2*var(--nwt-space, 0.25rem);   }
+.mb-3   { margin-bottom: 3*var(--nwt-space, 0.25rem);   }
+.mb-4   { margin-bottom: 4*var(--nwt-space, 0.25rem);   }
+.mb-5   { margin-bottom: 5*var(--nwt-space, 0.25rem);   }
+.mb-6   { margin-bottom: 6*var(--nwt-space, 0.25rem);   }
+.mb-7   { margin-bottom: 7*var(--nwt-space, 0.25rem);   }
+.mb-8   { margin-bottom: 8*var(--nwt-space, 0.25rem);   }
+.mb-9   { margin-bottom: 9*var(--nwt-space, 0.25rem);   }
+.mb-10  { margin-bottom: 10*var(--nwt-space, 0.25rem);  }
+.mb-11  { margin-bottom: 11*var(--nwt-space, 0.25rem);  }
+.mb-12  { margin-bottom: 12*var(--nwt-space, 0.25rem);  }
+.mb-13  { margin-bottom: 13*var(--nwt-space, 0.25rem);  }
+.mb-14  { margin-bottom: 14*var(--nwt-space, 0.25rem);  }
+.mb-15  { margin-bottom: 15*var(--nwt-space, 0.25rem);  }
+.mb-16  { margin-bottom: 16*var(--nwt-space, 0.25rem);  }
+.mb-17  { margin-bottom: 17*var(--nwt-space, 0.25rem);  }
+.mb-18  { margin-bottom: 18*var(--nwt-space, 0.25rem);  }
+.mb-19  { margin-bottom: 19*var(--nwt-space, 0.25rem);  }
+.mb-20  { margin-bottom: 20*var(--nwt-space, 0.25rem);  }
+
+.ml-0   { margin-left: 0px;                           }
+.ml-1   { margin-left: var(--nwt-space, 0.25rem);     }
+.ml-2   { margin-left: 2*var(--nwt-space, 0.25rem);   }
+.ml-3   { margin-left: 3*var(--nwt-space, 0.25rem);   }
+.ml-4   { margin-left: 4*var(--nwt-space, 0.25rem);   }
+.ml-5   { margin-left: 5*var(--nwt-space, 0.25rem);   }
+.ml-6   { margin-left: 6*var(--nwt-space, 0.25rem);   }
+.ml-7   { margin-left: 7*var(--nwt-space, 0.25rem);   }
+.ml-8   { margin-left: 8*var(--nwt-space, 0.25rem);   }
+.ml-9   { margin-left: 9*var(--nwt-space, 0.25rem);   }
+.ml-10  { margin-left: 10*var(--nwt-space, 0.25rem);  }
+.ml-11  { margin-left: 11*var(--nwt-space, 0.25rem);  }
+.ml-12  { margin-left: 12*var(--nwt-space, 0.25rem);  }
+.ml-13  { margin-left: 13*var(--nwt-space, 0.25rem);  }
+.ml-14  { margin-left: 14*var(--nwt-space, 0.25rem);  }
+.ml-15  { margin-left: 15*var(--nwt-space, 0.25rem);  }
+.ml-16  { margin-left: 16*var(--nwt-space, 0.25rem);  }
+.ml-17  { margin-left: 17*var(--nwt-space, 0.25rem);  }
+.ml-18  { margin-left: 18*var(--nwt-space, 0.25rem);  }
+.ml-19  { margin-left: 19*var(--nwt-space, 0.25rem);  }
+.ml-20  { margin-left: 20*var(--nwt-space, 0.25rem);  }
+
+.p-0   { padding: 0px;                           }
+.p-1   { padding: var(--nwt-space, 0.25rem);     }
+.p-2   { padding: 2*var(--nwt-space, 0.25rem);   }
+.p-3   { padding: 3*var(--nwt-space, 0.25rem);   }
+.p-4   { padding: 4*var(--nwt-space, 0.25rem);   }
+.p-5   { padding: 5*var(--nwt-space, 0.25rem);   }
+.p-6   { padding: 6*var(--nwt-space, 0.25rem);   }
+.p-7   { padding: 7*var(--nwt-space, 0.25rem);   }
+.p-8   { padding: 8*var(--nwt-space, 0.25rem);   }
+.p-9   { padding: 9*var(--nwt-space, 0.25rem);   }
+.p-10  { padding: 10*var(--nwt-space, 0.25rem);  }
+.p-11  { padding: 11*var(--nwt-space, 0.25rem);  }
+.p-12  { padding: 12*var(--nwt-space, 0.25rem);  }
+.p-13  { padding: 13*var(--nwt-space, 0.25rem);  }
+.p-14  { padding: 14*var(--nwt-space, 0.25rem);  }
+.p-15  { padding: 15*var(--nwt-space, 0.25rem);  }
+.p-16  { padding: 16*var(--nwt-space, 0.25rem);  }
+.p-17  { padding: 17*var(--nwt-space, 0.25rem);  }
+.p-18  { padding: 18*var(--nwt-space, 0.25rem);  }
+.p-19  { padding: 19*var(--nwt-space, 0.25rem);  }
+.p-20  { padding: 20*var(--nwt-space, 0.25rem);  }
+
+.pt-0   { padding-top: 0px;                           }
+.pt-1   { padding-top: var(--nwt-space, 0.25rem);     }
+.pt-2   { padding-top: 2*var(--nwt-space, 0.25rem);   }
+.pt-3   { padding-top: 3*var(--nwt-space, 0.25rem);   }
+.pt-4   { padding-top: 4*var(--nwt-space, 0.25rem);   }
+.pt-5   { padding-top: 5*var(--nwt-space, 0.25rem);   }
+.pt-6   { padding-top: 6*var(--nwt-space, 0.25rem);   }
+.pt-7   { padding-top: 7*var(--nwt-space, 0.25rem);   }
+.pt-8   { padding-top: 8*var(--nwt-space, 0.25rem);   }
+.pt-9   { padding-top: 9*var(--nwt-space, 0.25rem);   }
+.pt-10  { padding-top: 10*var(--nwt-space, 0.25rem);  }
+.pt-11  { padding-top: 11*var(--nwt-space, 0.25rem);  }
+.pt-12  { padding-top: 12*var(--nwt-space, 0.25rem);  }
+.pt-13  { padding-top: 13*var(--nwt-space, 0.25rem);  }
+.pt-14  { padding-top: 14*var(--nwt-space, 0.25rem);  }
+.pt-15  { padding-top: 15*var(--nwt-space, 0.25rem);  }
+.pt-16  { padding-top: 16*var(--nwt-space, 0.25rem);  }
+.pt-17  { padding-top: 17*var(--nwt-space, 0.25rem);  }
+.pt-18  { padding-top: 18*var(--nwt-space, 0.25rem);  }
+.pt-19  { padding-top: 19*var(--nwt-space, 0.25rem);  }
+.pt-20  { padding-top: 20*var(--nwt-space, 0.25rem);  }
+
+.pr-0   { padding-right: 0px;                           }
+.pr-1   { padding-right: var(--nwt-space, 0.25rem);     }
+.pr-2   { padding-right: 2*var(--nwt-space, 0.25rem);   }
+.pr-3   { padding-right: 3*var(--nwt-space, 0.25rem);   }
+.pr-4   { padding-right: 4*var(--nwt-space, 0.25rem);   }
+.pr-5   { padding-right: 5*var(--nwt-space, 0.25rem);   }
+.pr-6   { padding-right: 6*var(--nwt-space, 0.25rem);   }
+.pr-7   { padding-right: 7*var(--nwt-space, 0.25rem);   }
+.pr-8   { padding-right: 8*var(--nwt-space, 0.25rem);   }
+.pr-9   { padding-right: 9*var(--nwt-space, 0.25rem);   }
+.pr-10  { padding-right: 10*var(--nwt-space, 0.25rem);  }
+.pr-11  { padding-right: 11*var(--nwt-space, 0.25rem);  }
+.pr-12  { padding-right: 12*var(--nwt-space, 0.25rem);  }
+.pr-13  { padding-right: 13*var(--nwt-space, 0.25rem);  }
+.pr-14  { padding-right: 14*var(--nwt-space, 0.25rem);  }
+.pr-15  { padding-right: 15*var(--nwt-space, 0.25rem);  }
+.pr-16  { padding-right: 16*var(--nwt-space, 0.25rem);  }
+.pr-17  { padding-right: 17*var(--nwt-space, 0.25rem);  }
+.pr-18  { padding-right: 18*var(--nwt-space, 0.25rem);  }
+.pr-19  { padding-right: 19*var(--nwt-space, 0.25rem);  }
+.pr-20  { padding-right: 20*var(--nwt-space, 0.25rem);  }
+
+.pb-0   { padding-bottom: 0px;                           }
+.pb-1   { padding-bottom: var(--nwt-space, 0.25rem);     }
+.pb-2   { padding-bottom: 2*var(--nwt-space, 0.25rem);   }
+.pb-3   { padding-bottom: 3*var(--nwt-space, 0.25rem);   }
+.pb-4   { padding-bottom: 4*var(--nwt-space, 0.25rem);   }
+.pb-5   { padding-bottom: 5*var(--nwt-space, 0.25rem);   }
+.pb-6   { padding-bottom: 6*var(--nwt-space, 0.25rem);   }
+.pb-7   { padding-bottom: 7*var(--nwt-space, 0.25rem);   }
+.pb-8   { padding-bottom: 8*var(--nwt-space, 0.25rem);   }
+.pb-9   { padding-bottom: 9*var(--nwt-space, 0.25rem);   }
+.pb-10  { padding-bottom: 10*var(--nwt-space, 0.25rem);  }
+.pb-11  { padding-bottom: 11*var(--nwt-space, 0.25rem);  }
+.pb-12  { padding-bottom: 12*var(--nwt-space, 0.25rem);  }
+.pb-13  { padding-bottom: 13*var(--nwt-space, 0.25rem);  }
+.pb-14  { padding-bottom: 14*var(--nwt-space, 0.25rem);  }
+.pb-15  { padding-bottom: 15*var(--nwt-space, 0.25rem);  }
+.pb-16  { padding-bottom: 16*var(--nwt-space, 0.25rem);  }
+.pb-17  { padding-bottom: 17*var(--nwt-space, 0.25rem);  }
+.pb-18  { padding-bottom: 18*var(--nwt-space, 0.25rem);  }
+.pb-19  { padding-bottom: 19*var(--nwt-space, 0.25rem);  }
+.pb-20  { padding-bottom: 20*var(--nwt-space, 0.25rem);  }
+
+.pl-0   { padding-left: 0px;                           }
+.pl-1   { padding-left: var(--nwt-space, 0.25rem);     }
+.pl-2   { padding-left: 2*var(--nwt-space, 0.25rem);   }
+.pl-3   { padding-left: 3*var(--nwt-space, 0.25rem);   }
+.pl-4   { padding-left: 4*var(--nwt-space, 0.25rem);   }
+.pl-5   { padding-left: 5*var(--nwt-space, 0.25rem);   }
+.pl-6   { padding-left: 6*var(--nwt-space, 0.25rem);   }
+.pl-7   { padding-left: 7*var(--nwt-space, 0.25rem);   }
+.pl-8   { padding-left: 8*var(--nwt-space, 0.25rem);   }
+.pl-9   { padding-left: 9*var(--nwt-space, 0.25rem);   }
+.pl-10  { padding-left: 10*var(--nwt-space, 0.25rem);  }
+.pl-11  { padding-left: 11*var(--nwt-space, 0.25rem);  }
+.pl-12  { padding-left: 12*var(--nwt-space, 0.25rem);  }
+.pl-13  { padding-left: 13*var(--nwt-space, 0.25rem);  }
+.pl-14  { padding-left: 14*var(--nwt-space, 0.25rem);  }
+.pl-15  { padding-left: 15*var(--nwt-space, 0.25rem);  }
+.pl-16  { padding-left: 16*var(--nwt-space, 0.25rem);  }
+.pl-17  { padding-left: 17*var(--nwt-space, 0.25rem);  }
+.pl-18  { padding-left: 18*var(--nwt-space, 0.25rem);  }
+.pl-19  { padding-left: 19*var(--nwt-space, 0.25rem);  }
+.pl-20  { padding-left: 20*var(--nwt-space, 0.25rem);  }
+
+.gap-0   { gap: 0px;                           }
+.gap-1   { gap: var(--nwt-space, 0.25rem);     }
+.gap-2   { gap: 2*var(--nwt-space, 0.25rem);   }
+.gap-3   { gap: 3*var(--nwt-space, 0.25rem);   }
+.gap-4   { gap: 4*var(--nwt-space, 0.25rem);   }
+.gap-5   { gap: 5*var(--nwt-space, 0.25rem);   }
+.gap-6   { gap: 6*var(--nwt-space, 0.25rem);   }
+.gap-7   { gap: 7*var(--nwt-space, 0.25rem);   }
+.gap-8   { gap: 8*var(--nwt-space, 0.25rem);   }
+.gap-9   { gap: 9*var(--nwt-space, 0.25rem);   }
+.gap-10  { gap: 10*var(--nwt-space, 0.25rem);  }
+.gap-11  { gap: 11*var(--nwt-space, 0.25rem);  }
+.gap-12  { gap: 12*var(--nwt-space, 0.25rem);  }
+.gap-13  { gap: 13*var(--nwt-space, 0.25rem);  }
+.gap-14  { gap: 14*var(--nwt-space, 0.25rem);  }
+.gap-15  { gap: 15*var(--nwt-space, 0.25rem);  }
+.gap-16  { gap: 16*var(--nwt-space, 0.25rem);  }
+.gap-17  { gap: 17*var(--nwt-space, 0.25rem);  }
+.gap-18  { gap: 18*var(--nwt-space, 0.25rem);  }
+.gap-19  { gap: 19*var(--nwt-space, 0.25rem);  }
+.gap-20  { gap: 20*var(--nwt-space, 0.25rem);  }
+
+/* COLORS *********************************************************************/
+
 html {
 	margin:      auto;
 	max-width:   55em;
@@ -78,11 +380,6 @@ a:hover { color: #FBB9E1; background-color: #310566; }
 /* FONTS **********************************************************************
  * Normal: XXXX    Display: XXXX    Code: XXXX                                *
  ******************************************************************************/
-
-@font-face {
-	font-family: '';
-	src: url() format("opentype/truetype");
-}
 
 @font-face {
 	font-family: "Monaspace Krypton";
@@ -144,100 +441,6 @@ a:hover { color: #FBB9E1; background-color: #310566; }
 .border-purple { border-color: #310566; }
 .border-pink   { border-color: #FBB9E1; }
 
-/* SPACING ********************************************************************/
-
-:root {
-	--spacing-scale: 0.25rem;
-
-	--spacing-0:  0*var(--spacing-base);
-	--spacing-1:  1*var(--spacing-base);
-	--spacing-2:  2*var(--spacing-base);
-	--spacing-3:  3*var(--spacing-base);
-	--spacing-4:  4*var(--spacing-base);
-	--spacing-5:  5*var(--spacing-base);
-	--spacing-6:  6*var(--spacing-base);
-	--spacing-7:  7*var(--spacing-base);
-	--spacing-8:  8*var(--spacing-base);
-	--spacing-9:  9*var(--spacing-base);
-	--spacing-10: 10*var(--spacing-base);
-	--spacing-11: 11*var(--spacing-base);
-	--spacing-12: 12*var(--spacing-base);
-	--spacing-13: 13*var(--spacing-base);
-	--spacing-14: 14*var(--spacing-base);
-	--spacing-15: 15*var(--spacing-base);
-	--spacing-16: 16*var(--spacing-base);
-	--spacing-17: 17*var(--spacing-base);
-	--spacing-18: 18*var(--spacing-base);
-	--spacing-19: 19*var(--spacing-base);
-	--spacing-20: 20*var(--spacing-base);
-}
-
-.gap-0  { gap: var(--spacing-0);  }
-.gap-1  { gap: var(--spacing-1);  }
-.gap-2  { gap: var(--spacing-2);  }
-.gap-3  { gap: var(--spacing-3);  }
-.gap-4  { gap: var(--spacing-4);  }
-.gap-5  { gap: var(--spacing-5);  }
-.gap-6  { gap: var(--spacing-6);  }
-.gap-7  { gap: var(--spacing-7);  }
-.gap-8  { gap: var(--spacing-8);  }
-.gap-9  { gap: var(--spacing-9);  }
-.gap-10 { gap: var(--spacing-10); }
-.gap-11 { gap: var(--spacing-11); }
-.gap-12 { gap: var(--spacing-12); }
-.gap-13 { gap: var(--spacing-13); }
-.gap-14 { gap: var(--spacing-14); }
-.gap-15 { gap: var(--spacing-15); }
-.gap-16 { gap: var(--spacing-16); }
-.gap-17 { gap: var(--spacing-17); }
-.gap-18 { gap: var(--spacing-18); }
-.gap-19 { gap: var(--spacing-19); }
-.gap-20 { gap: var(--spacing-20); }
-
-.margin-0  { margin: var(--spacing-0);  }
-.margin-1  { margin: var(--spacing-1);  }
-.margin-2  { margin: var(--spacing-2);  }
-.margin-3  { margin: var(--spacing-3);  }
-.margin-4  { margin: var(--spacing-4);  }
-.margin-5  { margin: var(--spacing-5);  }
-.margin-6  { margin: var(--spacing-6);  }
-.margin-7  { margin: var(--spacing-7);  }
-.margin-8  { margin: var(--spacing-8);  }
-.margin-9  { margin: var(--spacing-9);  }
-.margin-10 { margin: var(--spacing-10); }
-.margin-11 { margin: var(--spacing-11); }
-.margin-12 { margin: var(--spacing-12); }
-.margin-13 { margin: var(--spacing-13); }
-.margin-14 { margin: var(--spacing-14); }
-.margin-15 { margin: var(--spacing-15); }
-.margin-16 { margin: var(--spacing-16); }
-.margin-17 { margin: var(--spacing-17); }
-.margin-18 { margin: var(--spacing-18); }
-.margin-19 { margin: var(--spacing-19); }
-.margin-20 { margin: var(--spacing-20); }
-
-.padding-0  { padding: var(--spacing-0);  }
-.padding-1  { padding: var(--spacing-1);  }
-.padding-2  { padding: var(--spacing-2);  }
-.padding-3  { padding: var(--spacing-3);  }
-.padding-4  { padding: var(--spacing-4);  }
-.padding-5  { padding: var(--spacing-5);  }
-.padding-6  { padding: var(--spacing-6);  }
-.padding-7  { padding: var(--spacing-7);  }
-.padding-8  { padding: var(--spacing-8);  }
-.padding-9  { padding: var(--spacing-9);  }
-.padding-10 { padding: var(--spacing-10); }
-.padding-11 { padding: var(--spacing-11); }
-.padding-12 { padding: var(--spacing-12); }
-.padding-13 { padding: var(--spacing-13); }
-.padding-14 { padding: var(--spacing-14); }
-.padding-15 { padding: var(--spacing-15); }
-.padding-16 { padding: var(--spacing-16); }
-.padding-17 { padding: var(--spacing-17); }
-.padding-18 { padding: var(--spacing-18); }
-.padding-19 { padding: var(--spacing-19); }
-.padding-20 { padding: var(--spacing-20); }
-
 </style>
 
 <body class="fl-vertical fl-top bg-pink txt-purple font-normal">
@@ -277,6 +480,18 @@ a:hover { color: #FBB9E1; background-color: #310566; }
 	available space and the size occupied by its inner content or children.
 	<p class="font-normal">
 	<a href="fl.css">Download</a>
+	</article>
+	
+	<article>
+	<h2 id="space"
+	    class="fl-horizontal bg-purple txt-pink">
+	Space
+	</h2>
+	<p class="font-normal">
+	A functional CSS library providing a configurable spacing scale and
+	classes to control the margin, padding, and gaps of elements.
+	<p class="font-normal">
+	<a href="space.css">Download</a>
 	</article>
 </main>
 
