@@ -1,62 +1,46 @@
-<!DOCTYPE html>
+/* Copyright (c) Nicolas Paul <n@nc0.fr> 2024.
 
-<!-- Copyright (c) Nicolas Paul <n@nc0.fr> 2024
+   You can do whatever you want with this software as long as you retain this
+   notice without alteration. */
 
-     You can do whatever you want with this software as long as you retain this
-     notice without alteration. -->
+/* A configurable spacing scale from 0 to 20.  It can be used to consistently
+   add spaces in a design, such as an element's padding (inner spacing, between
+   the border and the content), margin (outer spacing, between neighbors and
+   the border), the gap between children in a layout (like fluid layouts), and
+   the width/height an element should occupy relative to its neighbors.
 
-<!-- This document is part of nc0's Web Toolkit.  Read more about it on-line at
-     https://nc0.fr/web on the World Wide Web. -->
+   The scale can be configured by overriding the --space custom property with
+   a unit value.  Each step in the scale is simply a product between the step
+   and this variable, e.g. if --space is set to 5px, then step 10 on the scale
+   will be 10*5px=50px.
+   By default, the scale uses 0.25rem as its base.
 
-<html lang="en">
-<meta charset="utf-8">
-<title>nc0's Web Toolkit</title>
+   An element's margin space can be configured using the m-x (margin on all
+   four sides), mt-x (margin on the top side), mr-x (margin on the right side),
+   mb-x (margin on the bottom side), ml-x (margin on the left side),
+   mv-x (margin on the top and bottom sides), and mh-x (margin on the left and
+   right sides) classes, with x being a number in the scale, px for a single
+   pixel margin, or auto to let the browser decides.
 
-<meta name="viewport"     content="width=device-width, initial-scale=1">
-<meta name="title"        content="nc0's Web Toolkit">
-<meta name="description"  content="Tools to create hypertext documents.">
-<meta name="author"       content="nc0">
-<meta name="keywords"     content="web,toolkit,guides,tool,library,css,html,js">
-<meta name="theme-color"  content="#1b1b1b">
-<meta name="color-scheme" content="only dark">
+   The padding space can be configured using the p-x (padding on all four
+   sides), pt-x (padding on the top side), pr-x (padding on the right side),
+   pb-x (padding on the bottom side), pl-x (padding on the left side), pv-x
+   (padding on the top and bottom sides), and ph-x (padding on the left and
+   right sides) classes, with x being a number in the scale, px for a single
+   pixel padding, or auto to let the browser decides.
 
-<link rel="shortcut icon"                href="favicon.ico">
-<link rel="icon"                         href="nwt.png">
-<link rel="apple-touch-icon"             href="nwt.png">
-<link rel="apple-touch-icon-precomposed" href="nwt.png">
-<link rel="canonical"                    href="https://nc0.fr/web">
+   The gap space (gutters) can be changed using the gap-x (vertical and
+   horizontal gutters), gapv-x (vertical gutters), and gaph-x (horizontal
+   gutters), with x being a number in the scale, or px for a single pixel.
+   
+   You can also configure the size (width and height) of an element using the
+   s-x (size), w-x (width), and h-x (height) classes, with x being one of
+   ??????????????????? TODO(nc0).
 
-<!-- https://ogp.me -->
-<meta property="og:title"       content="nc0's Web Toolkit">
-<meta property="og:type"        content="website">
-<meta property="og:url"         content="https://nc0.fr/web">
-<meta property="og:description" content="Tools to create hypertext documents">
-<meta property="og:determiner"  content="">
-<meta property="og:locale"      content="en_US">
-<meta property="og:site_name"   content="nc0.fr/web">
-
-<!-- https://developer.x.com/en/docs/x-for-websites/ -->
-<meta name="twitter:card"        content="summary">
-<meta name="twitter:site"        content="@nc0___">
-<meta name="twitter:title"       content="nc0's Web Toolkit">
-<meta name="twitter:description" content="Tools to create hypertext documents">
-
-<style>
-/* RESET **********************************************************************/
-/* from https://nc0.fr/web/reset.css */
-
-body * {
-	display: inline;
-	margin: 0;
-	padding: 0;
-}
-
-/* SPACING  *******************************************************************/
-/* from https://nc0.fr/web/layouts.css */
-
-:root {
-	--space: 0.25rem;
-}
+   This should world across all modern browsers, excluding IE11.  To make it
+   works on IE11, you will need to manually replace all "var(--space, 0.25rem)"
+   with the value you gave to the variable --space, as CSS Custom Properties
+   aren't available in IE11. */
 
 .m-0 { margin: 0; }
 .m-1 { margin: var(--space, 0.25rem)); }
@@ -471,77 +455,3 @@ body * {
 
 .h-fit { height: fit-content; }
 .h-hug { height: max-content; }
-
-/* FLUID LAYOUT ***************************************************************/
-/* from https://nc0.fr/web/layouts.css */
-
-.fl-vt, .fl-vm, .fl-vb, .fl-va, .fl-hl, .fl-hc, .fl-hr, .fl-ha {
-	display: inline-flex;
-	flex-wrap: wrap;
-}
-
-.fl-vt, .fl-vm, .fl-vb, .fl-va {
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
-}
-
-.fl-hl, .fl-hc, .fl-hr, .fl-ha {
-	flex-direction: row;
-	align-items: center;
-	justify-content: flex-start;
-}
-
-.fl-vt, .fl-hl { justify-content: flex-start; }
-.fl-vm, .fl-hc { justify-content: center; }
-.fl-vb, .fl-hr { justify-content: flex-end; }
-.fl-va, .fl-ha { justify-content: space-between; }
-
-/* TODO(nc0): better properties? */
-.fl-vt > *, .fl-vm > *, .fl-vb > *, .fl-va > *,
-.fl-hl > *, .fl-hc > *, .fl-hr > *, .fl-ha > * {
-	flex-shrink: 1;
-	flex-grow: 0;
-	align-self: stretch;
-}
-
-/* COLORS *********************************************************************/
-.bg-white { background-color: #ffffff; }
-.bg-black { background-color: #000000; }
-.bg-blue { background-color: #0074be; }
-
-.txt-white { color: #ffffff; }
-.txt-black { color: #000000; }
-.txt-blue { color: #0074be; }
-
-.bd-white { border-color: #ffffff; }
-.bd-black { border-color: #000000; }
-.bd-blue { border-color: #0074be; }
-
-.bd { border: white 3px solid; }
-</style>
-
-<body class="fl-vt m-auto bg-blue txt-white">
-	<header class="fl-vt">
-		<h1 class="fl-ha bd">
-			<span>NC0'S</span>
-			<span>WEB</span>
-			<span>TOOLKIT</span>
-		</h1>
-	</header>
-	
-	<main class="fl-vt gap-1">
-		<h2 id="why-nwt" class="m-0">Why nWT?</h2>
-		<p>nc0's Web Toolkit (shortened as nWT) is a set of tools, guides, and libraries,
-		   to make it simpler and quicker to program and design applications and documents
-		   on the World Wide Web.
-		<p>Using only accepted Web standards, while keeping support for older Web browsers,
-		   nWT aims for performance and intuitive API. nWT is available under a
-		   <a href="COPYRIGHT">free license contract</a>. 
-		   
-		<a href="https://git.puffer.fish/?p=nico/web.git">Sources</a>
-			<a href="https://list.puffer.fish/hyperkitty/list/nwt@puffer.fish">Mailing list</a>
-			<a href="https://nc0.fr">nc0</a>
-	</main>
-</body>
-</html>
