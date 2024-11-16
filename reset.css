@@ -1,0 +1,60 @@
+/* Copyright (c) Nicolas Paul <n@nc0.fr> 2024.
+
+   You can do whatever you want with this software as long as you retain this
+   notice without alteration. */
+
+/* Reset reduces browser-specific styles and incosistencies by making the
+   document a blank sheet of paper you can control as fully as possible. */
+
+/* NOTE(nc0): default style sheets used by various browsers to render
+   hypertext documents:
+
+   * Blink: https://chromium.googlesource.com/chromium/blink/+/refs/heads/main/Source/core/css/html.css
+             https://chromium.googlesource.com/chromium/blink/+/refs/heads/main/Source/core/css/quirks.css
+
+   * Firefox: https://searchfox.org/mozilla-central/source/layout/style/res/ua.css
+              https://searchfox.org/mozilla-central/source/layout/style/res/html.css
+              https://searchfox.org/mozilla-central/source/layout/style/res/forms.css
+              https://searchfox.org/mozilla-central/source/layout/style/res/quirk.css
+*/
+
+/* NOTE(nc0): do not modify the display property here, as it would also break
+   elements expected to be hidden [0], and the fix for it is really hard as
+   browsers have bugs that make { display: none; } not enough!
+   And yes, that's retarded.
+
+   [0]: https://html.spec.whatwg.org/#hidden-elements */
+
+/* NOTE(nc0): do not modify "rare" targets or override vendor-specific stuff
+   without careful considerations as it could compromise safety or usability,
+   e.g. @page, -webkit-text-security, ... */
+
+* {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+
+	font: serif;
+	font-size: 100%;
+	font-weight: 400;
+
+	vertical-align: baseline;
+	line-height: 1;
+
+	list-style: none;
+	quotes: none;
+
+	border: none;
+	border-collapse: collapse;
+	border-spacing: 0;
+	
+	color: #000000;
+	background-color: #ffffff;
+	text-decoration: none;
+}
+*:before, *:after { content: ""; content: none; }

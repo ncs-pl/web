@@ -16,37 +16,50 @@
 
    * (v)ertical: children are placed on a vertical row, and may wrap on a new
      one if there are not enough space available.
+
    * (h)orizontal: children are placed on a horizontal row, and may wrap on a
      new one if there are not enough space available.
 
    Alignments:
 
-   * (t)op: aligns children from the top of the vertical row, only with vertical directions.
-   * (m)iddle: aligns children from the middle of the vertical row, only with vertical directions.
-   * (b)ottom: aligns children from the bottom of the vertical row, only with vertical directions.
-   * (l)eft: aligns children from the left of the horizontal row, only with horizontal directions.
-   * (c)enter: aligns children from the center of the horizontal row, only with horizontal directions.
-   * (r)ight: aligns children from the right of the horizontal row, only with horizontal directions.
-   * (a)uto: evenly space the gap between children on the row.
+   * (t) top: aligns children from the top of the vertical row,
+     only with vertical directions.
+
+   * (m) middle: aligns children from the middle of the vertical row,
+     only with vertical directions.
+
+   * (b) bottom: aligns children from the bottom of the vertical row,
+     only with vertical directions.
+
+   * (l) left: aligns children from the left of the horizontal row,
+     only with horizontal directions.
+
+   * (c) center: aligns children from the center of the horizontal row,
+     only with horizontal directions.
+
+   * (r) right: aligns children from the right of the horizontal row,
+     only with horizontal directions.
+
+   * (a) auto: evenly space the gap between children on the row.
 
    Fluid layouts should work on all modern browsers, starting with IE11.
    Avoid using min-height with fluid layouts on IE11, as the browser won't
    align items correctly due to some bugs in their implementation. */
 
 .fl-vt, .fl-vm, .fl-vb, .fl-va, .fl-hl, .fl-hc, .fl-hr, .fl-ha {
-	display: inline-flex;
+	display:   inline-flex;
 	flex-wrap: wrap;
 }
 
 .fl-vt, .fl-vm, .fl-vb, .fl-va {
-	flex-direction: column;
-	align-items: flex-start;
+	flex-direction:  column;
+	align-items:     flex-start;
 	justify-content: center;
 }
 
 .fl-hl, .fl-hc, .fl-hr, .fl-ha {
-	flex-direction: row;
-	align-items: center;
+	flex-direction:  row;
+	align-items:     center;
 	justify-content: flex-start;
 }
 
@@ -55,10 +68,9 @@
 .fl-vb, .fl-hr { justify-content: flex-end; }
 .fl-va, .fl-ha { justify-content: space-between; }
 
-/* TODO(nc0): better properties? */
 .fl-vt > *, .fl-vm > *, .fl-vb > *, .fl-va > *,
 .fl-hl > *, .fl-hc > *, .fl-hr > *, .fl-ha > * {
 	flex-shrink: 1;
-	flex-grow: 0;
-	align-self: stretch;
+	flex-grow:   0;
+	align-self:  stretch;
 }
