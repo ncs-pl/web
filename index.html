@@ -93,7 +93,6 @@
 
 .fl-horizontal > *,
 .fl-vertical   > * {
-	flex-basis:        100%;
 	flex-shrink:       1;
 	flex-grow:         0;
 	-ms-flex-positive: 0; /* IE10 */
@@ -453,7 +452,7 @@ a:hover { color: #FBB9E1; background-color: #310566; }
 
 	<details open>
 		<summary>Navigation</summary>
-		<nav class="fl-horizontal fl-middle gap-6">
+		<nav class="fl-horizontal fl-center">
 			<a href="https://git.puffer.fish/?p=nico/web.git">Sources</a>
 			<a href="https://list.puffer.fish/hyperkitty/list/nwt@puffer.fish">
 			Mailing list
@@ -469,9 +468,9 @@ a:hover { color: #FBB9E1; background-color: #310566; }
 	others to quickly prototype and iterate on hypertext documents on
 	the World Wide Web, in a responsive, interactive, and elegant manner.
 
-	<article>
+	<article class="fl-vertical fl-top">
 	<h2 id="fluid-layout"
-	    class="fl-horizontal bg-purple txt-pink">
+	    class="bg-purple txt-pink">
 	Fluid Layout
 	</h2>
 	<p class="font-normal">
