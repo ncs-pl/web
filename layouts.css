@@ -3,20 +3,9 @@
    You can do whatever you want with this software as long as you retain this
    notice without alteration. */
 
-/* nWT.css, a functional-style CSS library for rapid design and prototyping 
-   on hypertext documents. */
-
-/* NOTE(nc0):
-How is design typically done?
-
-- Defines its style (background color, text color, border, ...)
-- Defines its effects (shadows, ...)
-- Defines its interactions
-*/
-
-
-/* TODO(nc0): CSS reset */
-
+/* layouts.css is a functional CSS library providing intuitive APIs to create
+   responsive layouts for hypertext documents.
+   layouts.css is part of nc0's Web Toolkit, see more at htt[s://nc0.fr/web. */
 
 /* A configurable spacing scale from 0 to 20.  It can be used to consistently
    add spaces in a design, such as an element's padding (inner spacing, between
@@ -45,7 +34,14 @@ How is design typically done?
 
    The gap space (gutters) can be changed using the gap-x (vertical and
    horizontal gutters), gapv-x (vertical gutters), and gaph-x (horizontal
-   gutters), with x being a number in the scale, or px for a single pixel. */
+   gutters), with x being a number in the scale, or px for a single pixel.
+
+   This should world across all modern browsers, excluding IE11.  To make it
+   works on IE11, you will need to manually replace all "var(--space, 0.25rem)"
+   with the value you gave to the variable --space, as CSS Custom Properties
+   aren't available in IE11. */
+
+:root { --space: 0.25rem; }
 
 .m-0 { margin: 0; }
 .m-1 { margin: var(--space, 0.25rem); }
@@ -167,53 +163,53 @@ How is design typically done?
 .ml-px { margin-left: 1px; }
 .ml-auto { margin-left: auto; }
 
-.mv-0 { margin: 0 unset; }
-.mv-1 { margin: var(--space, 0.25rem) unset; }
-.mv-2 { margin: 2*var(--space, 0.25rem) unset; }
-.mv-3 { margin: 3*var(--space, 0.25rem) unset; }
-.mv-4 { margin: 4*var(--space, 0.25rem) unset; }
-.mv-5 { margin: 5*var(--space, 0.25rem) unset; }
-.mv-6 { margin: 6*var(--space, 0.25rem) unset; }
-.mv-7 { margin: 7*var(--space, 0.25rem) unset; }
-.mv-8 { margin: 8*var(--space, 0.25rem) unset; }
-.mv-9 { margin: 9*var(--space, 0.25rem) unset; }
-.mv-10 { margin: 10*var(--space, 0.25rem) unset; }
-.mv-11 { margin: 11*var(--space, 0.25rem) unset; }
-.mv-12 { margin: 12*var(--space, 0.25rem) unset; }
-.mv-13 { margin: 13*var(--space, 0.25rem) unset; }
-.mv-14 { margin: 14*var(--space, 0.25rem) unset; }
-.mv-15 { margin: 15*var(--space, 0.25rem) unset; }
-.mv-16 { margin: 16*var(--space, 0.25rem) unset; }
-.mv-17 { margin: 17*var(--space, 0.25rem) unset; }
-.mv-18 { margin: 18*var(--space, 0.25rem) unset; }
-.mv-19 { margin: 19*var(--space, 0.25rem) unset; }
-.mv-20 { margin: 20*var(--space, 0.25rem) unset; }
-.mv-px { margin: 1px unset; }
-.mv-auto { margin: auto unset; }
+.mv-0 { margin-right: 0; margin-bottom: 0; }
+.mv-1 { margin-right: var(--space, 0.25rem); margin-bottom: var(--space, 0.25rem); }
+.mv-2 { margin-right: 2*var(--space, 0.25rem); margin-bottom: 2*var(--space, 0.25rem); }
+.mv-3 { margin-right: 3*var(--space, 0.25rem); margin-bottom: 3*var(--space, 0.25rem); }
+.mv-4 { margin-right: 4*var(--space, 0.25rem); margin-bottom: 4*var(--space, 0.25rem); }
+.mv-5 { margin-right: 5*var(--space, 0.25rem); margin-bottom: 5*var(--space, 0.25rem); }
+.mv-6 { margin-right: 6*var(--space, 0.25rem); margin-bottom: 6*var(--space, 0.25rem); }
+.mv-7 { margin-right: 7*var(--space, 0.25rem); margin-bottom: 7*var(--space, 0.25rem); }
+.mv-8 { margin-right: 8*var(--space, 0.25rem); margin-bottom: 8*var(--space, 0.25rem); }
+.mv-9 { margin-right: 9*var(--space, 0.25rem); margin-bottom: 9*var(--space, 0.25rem); }
+.mv-10 { margin-right: 10*var(--space, 0.25rem); margin-bottom: 10*var(--space, 0.25rem); }
+.mv-11 { margin-right: 11*var(--space, 0.25rem); margin-bottom: 11*var(--space, 0.25rem); }
+.mv-12 { margin-right: 12*var(--space, 0.25rem); margin-bottom: 12*var(--space, 0.25rem); }
+.mv-13 { margin-right: 13*var(--space, 0.25rem); margin-bottom: 13*var(--space, 0.25rem); }
+.mv-14 { margin-right: 14*var(--space, 0.25rem); margin-bottom: 14*var(--space, 0.25rem); }
+.mv-15 { margin-right: 15*var(--space, 0.25rem); margin-bottom: 15*var(--space, 0.25rem); }
+.mv-16 { margin-right: 16*var(--space, 0.25rem); margin-bottom: 16*var(--space, 0.25rem); }
+.mv-17 { margin-right: 17*var(--space, 0.25rem); margin-bottom: 17*var(--space, 0.25rem); }
+.mv-18 { margin-right: 18*var(--space, 0.25rem); margin-bottom: 18*var(--space, 0.25rem); }
+.mv-19 { margin-right: 19*var(--space, 0.25rem); margin-bottom: 19*var(--space, 0.25rem); }
+.mv-20 { margin-right: 20*var(--space, 0.25rem); margin-bottom: 20*var(--space, 0.25rem); }
+.mv-px { margin-right: 1px; margin-bottom: 1px; }
+.mv-auto { margin-right: auto; margin-bottom: auto; }
 
-.mh-0 { margin: unset 0; }
-.mh-1 { margin: unset var(--space, 0.25rem); }
-.mh-2 { margin: unset 2*var(--space, 0.25rem); }
-.mh-3 { margin: unset 3*var(--space, 0.25rem); }
-.mh-4 { margin: unset 4*var(--space, 0.25rem); }
-.mh-5 { margin: unset 5*var(--space, 0.25rem); }
-.mh-6 { margin: unset 6*var(--space, 0.25rem); }
-.mh-7 { margin: unset 7*var(--space, 0.25rem); }
-.mh-8 { margin: unset 8*var(--space, 0.25rem); }
-.mh-9 { margin: unset 9*var(--space, 0.25rem); }
-.mh-10 { margin: unset 10*var(--space, 0.25rem); }
-.mh-11 { margin: unset 11*var(--space, 0.25rem); }
-.mh-12 { margin: unset 12*var(--space, 0.25rem); }
-.mh-13 { margin: unset 13*var(--space, 0.25rem); }
-.mh-14 { margin: unset 14*var(--space, 0.25rem); }
-.mh-15 { margin: unset 15*var(--space, 0.25rem); }
-.mh-16 { margin: unset 16*var(--space, 0.25rem); }
-.mh-17 { margin: unset 17*var(--space, 0.25rem); }
-.mh-18 { margin: unset 18*var(--space, 0.25rem); }
-.mh-19 { margin: unset 19*var(--space, 0.25rem); }
-.mh-20 { margin: unset 20*var(--space, 0.25rem); }
-.mh-px { margin: unset 1px; }
-.mh-auto { margin: unset auto; }
+.mh-0 { margin-right: 0; margin-bottom: 0; }
+.mh-1 { margin-right: var(--space, 0.25rem); margin-bottom: var(--space, 0.25rem); }
+.mh-2 { margin-right: 2*var(--space, 0.25rem); margin-bottom: 2*var(--space, 0.25rem); }
+.mh-3 { margin-right: 3*var(--space, 0.25rem); margin-bottom: 3*var(--space, 0.25rem); }
+.mh-4 { margin-right: 4*var(--space, 0.25rem); margin-bottom: 4*var(--space, 0.25rem); }
+.mh-5 { margin-right: 5*var(--space, 0.25rem); margin-bottom: 5*var(--space, 0.25rem); }
+.mh-6 { margin-right: 6*var(--space, 0.25rem); margin-bottom: 6*var(--space, 0.25rem); }
+.mh-7 { margin-right: 7*var(--space, 0.25rem); margin-bottom: 7*var(--space, 0.25rem); }
+.mh-8 { margin-right: 8*var(--space, 0.25rem); margin-bottom: 8*var(--space, 0.25rem); }
+.mh-9 { margin-right: 9*var(--space, 0.25rem); margin-bottom: 9*var(--space, 0.25rem); }
+.mh-10 { margin-right: 10*var(--space, 0.25rem); margin-bottom: 10*var(--space, 0.25rem); }
+.mh-11 { margin-right: 11*var(--space, 0.25rem); margin-bottom: 11*var(--space, 0.25rem); }
+.mh-12 { margin-right: 12*var(--space, 0.25rem); margin-bottom: 12*var(--space, 0.25rem); }
+.mh-13 { margin-right: 13*var(--space, 0.25rem); margin-bottom: 13*var(--space, 0.25rem); }
+.mh-14 { margin-right: 14*var(--space, 0.25rem); margin-bottom: 14*var(--space, 0.25rem); }
+.mh-15 { margin-right: 15*var(--space, 0.25rem); margin-bottom: 15*var(--space, 0.25rem); }
+.mh-16 { margin-right: 16*var(--space, 0.25rem); margin-bottom: 16*var(--space, 0.25rem); }
+.mh-17 { margin-right: 17*var(--space, 0.25rem); margin-bottom: 17*var(--space, 0.25rem); }
+.mh-18 { margin-right: 18*var(--space, 0.25rem); margin-bottom: 18*var(--space, 0.25rem); }
+.mh-19 { margin-right: 19*var(--space, 0.25rem); margin-bottom: 19*var(--space, 0.25rem); }
+.mh-20 { margin-right: 20*var(--space, 0.25rem); margin-bottom: 20*var(--space, 0.25rem); }
+.mh-px { margin-right: 1px; margin-bottom: 1px; }
+.mh-auto { margin-right: auto; margin-bottom: auto; }
 
 .p-0 { padding: 0; }
 .p-1 { padding: var(--space, 0.25rem); }
@@ -335,53 +331,53 @@ How is design typically done?
 .pl-px { padding-left: 1px; }
 .pl-auto { padding-left: auto; }
 
-.pv-0 { padding: 0 unset; }
-.pv-1 { padding: var(--space, 0.25rem) unset; }
-.pv-2 { padding: 2*var(--space, 0.25rem) unset; }
-.pv-3 { padding: 3*var(--space, 0.25rem) unset; }
-.pv-4 { padding: 4*var(--space, 0.25rem) unset; }
-.pv-5 { padding: 5*var(--space, 0.25rem) unset; }
-.pv-6 { padding: 6*var(--space, 0.25rem) unset; }
-.pv-7 { padding: 7*var(--space, 0.25rem) unset; }
-.pv-8 { padding: 8*var(--space, 0.25rem) unset; }
-.pv-9 { padding: 9*var(--space, 0.25rem) unset; }
-.pv-10 { padding: 10*var(--space, 0.25rem) unset; }
-.pv-11 { padding: 11*var(--space, 0.25rem) unset; }
-.pv-12 { padding: 12*var(--space, 0.25rem) unset; }
-.pv-13 { padding: 13*var(--space, 0.25rem) unset; }
-.pv-14 { padding: 14*var(--space, 0.25rem) unset; }
-.pv-15 { padding: 15*var(--space, 0.25rem) unset; }
-.pv-16 { padding: 16*var(--space, 0.25rem) unset; }
-.pv-17 { padding: 17*var(--space, 0.25rem) unset; }
-.pv-18 { padding: 18*var(--space, 0.25rem) unset; }
-.pv-19 { padding: 19*var(--space, 0.25rem) unset; }
-.pv-20 { padding: 20*var(--space, 0.25rem) unset; }
-.pv-px { padding: 1px unset; }
-.pv-auto { padding: auto unset; }
+.pv-0 { padding-right: 0; padding-bottom: 0; }
+.pv-1 { padding-right: var(--space, 0.25rem); padding-bottom: var(--space, 0.25rem); }
+.pv-2 { padding-right: 2*var(--space, 0.25rem); padding-bottom: 2*var(--space, 0.25rem); }
+.pv-3 { padding-right: 3*var(--space, 0.25rem); padding-bottom: 3*var(--space, 0.25rem); }
+.pv-4 { padding-right: 4*var(--space, 0.25rem); padding-bottom: 4*var(--space, 0.25rem); }
+.pv-5 { padding-right: 5*var(--space, 0.25rem); padding-bottom: 5*var(--space, 0.25rem); }
+.pv-6 { padding-right: 6*var(--space, 0.25rem); padding-bottom: 6*var(--space, 0.25rem); }
+.pv-7 { padding-right: 7*var(--space, 0.25rem); padding-bottom: 7*var(--space, 0.25rem); }
+.pv-8 { padding-right: 8*var(--space, 0.25rem); padding-bottom: 8*var(--space, 0.25rem); }
+.pv-9 { padding-right: 9*var(--space, 0.25rem); padding-bottom: 9*var(--space, 0.25rem); }
+.pv-10 { padding-right: 10*var(--space, 0.25rem); padding-bottom: 10*var(--space, 0.25rem); }
+.pv-11 { padding-right: 11*var(--space, 0.25rem); padding-bottom: 11*var(--space, 0.25rem); }
+.pv-12 { padding-right: 12*var(--space, 0.25rem); padding-bottom: 12*var(--space, 0.25rem); }
+.pv-13 { padding-right: 13*var(--space, 0.25rem); padding-bottom: 13*var(--space, 0.25rem); }
+.pv-14 { padding-right: 14*var(--space, 0.25rem); padding-bottom: 14*var(--space, 0.25rem); }
+.pv-15 { padding-right: 15*var(--space, 0.25rem); padding-bottom: 15*var(--space, 0.25rem); }
+.pv-16 { padding-right: 16*var(--space, 0.25rem); padding-bottom: 16*var(--space, 0.25rem); }
+.pv-17 { padding-right: 17*var(--space, 0.25rem); padding-bottom: 17*var(--space, 0.25rem); }
+.pv-18 { padding-right: 18*var(--space, 0.25rem); padding-bottom: 18*var(--space, 0.25rem); }
+.pv-19 { padding-right: 19*var(--space, 0.25rem); padding-bottom: 19*var(--space, 0.25rem); }
+.pv-20 { padding-right: 20*var(--space, 0.25rem); padding-bottom: 20*var(--space, 0.25rem); }
+.pv-px { padding-right: 1px; padding-bottom: 1px; }
+.pv-auto { padding-right: auto; padding-bottom: auto; }
 
-.ph-0 { padding: unset 0; }
-.ph-1 { padding: unset var(--space, 0.25rem); }
-.ph-2 { padding: unset 2*var(--space, 0.25rem); }
-.ph-3 { padding: unset 3*var(--space, 0.25rem); }
-.ph-4 { padding: unset 4*var(--space, 0.25rem); }
-.ph-5 { padding: unset 5*var(--space, 0.25rem); }
-.ph-6 { padding: unset 6*var(--space, 0.25rem); }
-.ph-7 { padding: unset 7*var(--space, 0.25rem); }
-.ph-8 { padding: unset 8*var(--space, 0.25rem); }
-.ph-9 { padding: unset 9*var(--space, 0.25rem); }
-.ph-10 { padding: unset 10*var(--space, 0.25rem); }
-.ph-11 { padding: unset 11*var(--space, 0.25rem); }
-.ph-12 { padding: unset 12*var(--space, 0.25rem); }
-.ph-13 { padding: unset 13*var(--space, 0.25rem); }
-.ph-14 { padding: unset 14*var(--space, 0.25rem); }
-.ph-15 { padding: unset 15*var(--space, 0.25rem); }
-.ph-16 { padding: unset 16*var(--space, 0.25rem); }
-.ph-17 { padding: unset 17*var(--space, 0.25rem); }
-.ph-18 { padding: unset 18*var(--space, 0.25rem); }
-.ph-19 { padding: unset 19*var(--space, 0.25rem); }
-.ph-20 { padding: unset 20*var(--space, 0.25rem); }
-.ph-px { padding: unset 1px; }
-.ph-auto { padding: unset auto; }
+.ph-0 { padding-left: 0; padding-right: 0; }
+.ph-1 { padding-left: var(--space, 0.25rem); padding-right: var(--space, 0.25rem); }
+.ph-2 { padding-left: 2*var(--space, 0.25rem); padding-right: 2*var(--space, 0.25rem); }
+.ph-3 { padding-left: 3*var(--space, 0.25rem); padding-right: 3*var(--space, 0.25rem); }
+.ph-4 { padding-left: 4*var(--space, 0.25rem); padding-right: 4*var(--space, 0.25rem); }
+.ph-5 { padding-left: 5*var(--space, 0.25rem); padding-right: 5*var(--space, 0.25rem); }
+.ph-6 { padding-left: 6*var(--space, 0.25rem); padding-right: 6*var(--space, 0.25rem); }
+.ph-7 { padding-left: 7*var(--space, 0.25rem); padding-right: 7*var(--space, 0.25rem); }
+.ph-8 { padding-left: 8*var(--space, 0.25rem); padding-right: 8*var(--space, 0.25rem); }
+.ph-9 { padding-left: 9*var(--space, 0.25rem); padding-right: 9*var(--space, 0.25rem); }
+.ph-10 { padding-left: 10*var(--space, 0.25rem); padding-right: 10*var(--space, 0.25rem); }
+.ph-11 { padding-left: 11*var(--space, 0.25rem); padding-right: 11*var(--space, 0.25rem); }
+.ph-12 { padding-left: 12*var(--space, 0.25rem); padding-right: 12*var(--space, 0.25rem); }
+.ph-13 { padding-left: 13*var(--space, 0.25rem); padding-right: 13*var(--space, 0.25rem); }
+.ph-14 { padding-left: 14*var(--space, 0.25rem); padding-right: 14*var(--space, 0.25rem); }
+.ph-15 { padding-left: 15*var(--space, 0.25rem); padding-right: 15*var(--space, 0.25rem); }
+.ph-16 { padding-left: 16*var(--space, 0.25rem); padding-right: 16*var(--space, 0.25rem); }
+.ph-17 { padding-left: 17*var(--space, 0.25rem); padding-right: 17*var(--space, 0.25rem); }
+.ph-18 { padding-left: 18*var(--space, 0.25rem); padding-right: 18*var(--space, 0.25rem); }
+.ph-19 { padding-left: 19*var(--space, 0.25rem); padding-right: 19*var(--space, 0.25rem); }
+.ph-20 { padding-left: 20*var(--space, 0.25rem); padding-right: 20*var(--space, 0.25rem); }
+.ph-px { padding-left: 1px; padding-right: 1px; }
+.ph-auto { padding-left: auto; padding-right: auto; }
 
 .gap-0 { gap: 0; }
 .gap-1 { gap: var(--space, 0.25rem); }
@@ -462,34 +458,21 @@ How is design typically done?
    document, where D is the value for the direction of the fluid layout, and A
    is the value for the alignment of the children in a fluid layout.
 
-   (D)irections:
+   Directions:
 
    * (v)ertical: children are placed on a vertical row, and may wrap on a new
      one if there are not enough space available.
-
    * (h)orizontal: children are placed on a horizontal row, and may wrap on a
      new one if there are not enough space available.
 
-   (A)lignments:
+   Alignments:
 
-   * (t)op: aligns children from the top of the vertical row, only with
-            vertical directions.
-
-   * (m)iddle: aligns children from the middle of the vertical row, only with
-               vertical directions.
-
-   * (b)ottom: aligns children from the bottom of the vertical row, only with
-               vertical directions.
-
-   * (l)eft: aligns children from the left of the horizontal row, only with
-             horizontal directions.
-
-   * (c)enter: aligns children from the center of the horizontal row, only with
-               horizontal directions.
-
-   * (r)ight: aligns children from the right of the horizontal row, only with
-              horizontal directions.
-
+   * (t)op: aligns children from the top of the vertical row, only with vertical directions.
+   * (m)iddle: aligns children from the middle of the vertical row, only with vertical directions.
+   * (b)ottom: aligns children from the bottom of the vertical row, only with vertical directions.
+   * (l)eft: aligns children from the left of the horizontal row, only with horizontal directions.
+   * (c)enter: aligns children from the center of the horizontal row, only with horizontal directions.
+   * (r)ight: aligns children from the right of the horizontal row, only with horizontal directions.
    * (a)uto: evenly space the gap between children on the row.
 
    Fluid layouts should work on all modern browsers, starting with IE11.
@@ -526,4 +509,3 @@ How is design typically done?
 }
 
 
-/* TODO(nc0): grid layout-style API ? */
